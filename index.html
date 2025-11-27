@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>AI Rasm Generator</title>
+<style>
+    body { font-family: Arial; text-align: center; padding: 30px; background: #fafafa; }
+    input { width: 300px; padding: 10px; }
+    button { padding: 10px 20px; margin-left: 10px; }
+    img { margin-top: 20px; width: 350px; border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<h1>AI Rasm Generator</h1>
+<p>Matn yozing va rasm yarating</p>
+
+<input id="p" type="text" placeholder="Masalan: Lamborghini">
+<button onclick="gen()">Generate</button>
+
+<div id="out"></div>
+
+<script>
+function gen(){
+    const t = document.getElementById("p").value;
+    const link = "https://image.pollinations.ai/prompt/" + encodeURIComponent(t);
+    document.getElementById("out").innerHTML = `<img src="${link}">`;
+}
+</script>
+
+</body>
+</html>
